@@ -1,0 +1,925 @@
+{
+  "meta": {
+    "title": {
+      "en": "ilios | Smart Golf Cart Ecosystem",
+      "ar": "ilios | منظومة ذكية لعربات الجولف"
+    },
+    "description": {
+      "en": "Beyond Maintenance: A Smart Ecosystem for Golf Carts. We Bring Smooth Rides to You with proactive maintenance and digital diagnostics.",
+      "ar": "ما وراء الصيانة: منظومة ذكية لعربات الجولف. نأتي إليك براحة القيادة مع الصيانة الاستباقية والتشخيص الرقمي."
+    }
+  },
+  "nav": {
+    "logo_text": {
+      "en": "ilios",
+      "ar": "ilios"
+    },
+    "links": [
+      {
+        "label": {
+          "en": "Smart Tools",
+          "ar": "أدوات ذكية"
+        },
+        "href": "#smart-tools"
+      },
+      {
+        "label": {
+          "en": "Services",
+          "ar": "خدماتنا"
+        },
+        "href": "#services"
+      },
+      {
+        "label": {
+          "en": "Trust",
+          "ar": "الثقة"
+        },
+        "href": "#trust"
+      },
+      {
+        "label": {
+          "en": "Coverage",
+          "ar": "تغطيتنا"
+        },
+        "href": "#coverage"
+      },
+      {
+        "label": {
+          "en": "Partner",
+          "ar": "شركاء النجاح"
+        },
+        "href": "#partner"
+      }
+    ],
+    "btn_login_text": {
+      "en": "Login",
+      "ar": "تسجيل الدخول"
+    },
+    "btn_cta_text": {
+      "en": "Book Audit",
+      "ar": "احجز فحص"
+    },
+    "lang_toggle": {
+      "en": "عربي",
+      "ar": "EN"
+    },
+    "links_smart_tools": {
+      "en": "Smart Tools",
+      "ar": "أدوات ذكية"
+    },
+    "links_services": {
+      "en": "Services",
+      "ar": "خدماتنا"
+    },
+    "links_trust": {
+      "en": "Trust",
+      "ar": "الثقة"
+    },
+    "links_coverage": {
+      "en": "Coverage",
+      "ar": "تغطيتنا"
+    },
+    "links_partner": {
+      "en": "Partner",
+      "ar": "شركاء النجاح"
+    }
+  },
+  "hero": {
+    "headline": {
+      "en": "Beyond Maintenance: A Smart Ecosystem for Golf Carts",
+      "ar": "ما وراء الصيانة: منظومة ذكية لعربات الجولف"
+    },
+    "subheadline": {
+      "en": "We Bring Smooth Rides to You",
+      "ar": "نأتي إليك براحة القيادة"
+    },
+    "cta_primary_text": {
+      "en": "Book Audit",
+      "ar": "احجز فحص"
+    },
+    "cta_secondary_text": {
+      "en": "Explore Services",
+      "ar": "استكشف خدماتنا"
+    }
+  },
+  "smart_tools": {
+    "section_title": {
+      "en": "Engineering-Grade Smart Tools",
+      "ar": "أدوات ذكية هندسية"
+    },
+    "section_subtitle": {
+      "en": "Data-driven insights to maximize your fleet's lifespan and efficiency.",
+      "ar": "رؤى مبنية على البيانات لتعظيم عمر وكفاءة أسطولك."
+    },
+    "soh": {
+      "card_title": {
+        "en": "Battery State of Health (SOH) Calculator",
+        "ar": "حاسبة حالة صحة البطارية (SOH)"
+      },
+      "card_description": {
+        "en": "Assess your battery's true capacity based on voltage drop and usage. Get immediate technical feedback.",
+        "ar": "تقييم السعة الحقيقية لبطاريتك بناءً على انخفاض الجهد والاستخدام. احصل على ملاحظات فنية فورية."
+      },
+      "input_labels": {
+        "battery_type": {
+          "en": "Battery Type",
+          "ar": "نوع البطارية"
+        },
+        "nominal_voltage": {
+          "en": "Nominal Voltage (V)",
+          "ar": "الجهد الاسمي (فولت)"
+        },
+        "capacity": {
+          "en": "Capacity (Ah)",
+          "ar": "السعة (أمبير ساعة)"
+        },
+        "age": {
+          "en": "Battery Age (Months)",
+          "ar": "عمر البطارية (أشهر)"
+        },
+        "soc_start": {
+          "en": "SOC Start (%)",
+          "ar": "مستوى الشحن عند البدء (%)"
+        },
+        "v_start": {
+          "en": "Voltage Start (V)",
+          "ar": "الجهد عند البدء (فولت)"
+        },
+        "soc_end": {
+          "en": "SOC End (%)",
+          "ar": "مستوى الشحن عند الانتهاء (%)"
+        },
+        "v_end": {
+          "en": "Voltage End (V)",
+          "ar": "الجهد عند الانتهاء (فولت)"
+        },
+        "v_load": {
+          "en": "Voltage Under Load (V)",
+          "ar": "الجهد تحت الحمل (فولت)"
+        },
+        "distance": {
+          "en": "Distance Driven (km)",
+          "ar": "المسافة المقطوعة (كم)"
+        },
+        "expected_range": {
+          "en": "Expected Range New (km)",
+          "ar": "المدى المتوقع للجديد (كم)"
+        }
+      },
+      "battery_types": [
+        {
+          "value": "lead_acid",
+          "label": {
+            "en": "Lead Acid",
+            "ar": "رصاص حمضية"
+          }
+        },
+        {
+          "value": "lithium",
+          "label": {
+            "en": "Lithium",
+            "ar": "ليثيوم"
+          }
+        }
+      ],
+      "btn_text": {
+        "en": "Calculate SOH",
+        "ar": "احسب حالة البطارية"
+      },
+      "result_prefix": {
+        "en": "Estimated SOH:",
+        "ar": "حالة البطارية المقدرة:"
+      },
+      "statuses": {
+        "excellent": {
+          "en": "Excellent",
+          "ar": "ممتازة"
+        },
+        "good": {
+          "en": "Good",
+          "ar": "جيدة"
+        },
+        "needs_attention": {
+          "en": "Needs Attention",
+          "ar": "تحتاج إلى انتباه"
+        },
+        "weak": {
+          "en": "Weak - Service Recommended",
+          "ar": "ضعيفة - يوصى بالصيانة"
+        },
+        "replace": {
+          "en": "Replace Soon",
+          "ar": "استبدل قريباً"
+        }
+      },
+      "cta_hook": {
+        "en": "Your battery needs attention. Book a free 7-Axis Audit now.",
+        "ar": "بطاريتك بحاجة إلى اهتمام. احجز فحص مجاني شامل الآن."
+      },
+      "title": {
+        "en": "Battery State of Health (SOH) Calculator",
+        "ar": "حاسبة حالة صحة البطارية (SOH)"
+      },
+      "battery_type_label": {
+        "en": "Battery Chemistry",
+        "ar": "نوع البطارية"
+      },
+      "battery_lead_acid": {
+        "en": "Lead Acid",
+        "ar": "رصاص حمضية"
+      },
+      "battery_lithium": {
+        "en": "Lithium",
+        "ar": "ليثيوم"
+      },
+      "voltage_label": {
+        "en": "Nominal Voltage (V)",
+        "ar": "الجهد الاسمي (فولت)"
+      },
+      "voltage_after_label": {
+        "en": "Voltage After Load (V)",
+        "ar": "الجهد بعد التحميل (فولت)"
+      },
+      "distance_label": {
+        "en": "Distance Driven (km)",
+        "ar": "المسافة المقطوعة (كم)"
+      },
+      "calculate_btn": {
+        "en": "Calculate SOH",
+        "ar": "احسب حالة البطارية"
+      }
+    },
+    "roi": {
+      "card_title": {
+        "en": "Proactive Maintenance ROI",
+        "ar": "عائد الاستثمار للصيانة الاستباقية"
+      },
+      "card_description": {
+        "en": "Discover the financial impact of switching from reactive repairs to our proactive maintenance ecosystem.",
+        "ar": "اكتشف التأثير المالي للتحول من الإصلاحات التفاعلية إلى منظومة الصيانة الاستباقية لدينا."
+      },
+      "input_labels": {
+        "fleet_size": {
+          "en": "Number of Carts",
+          "ar": "عدد العربات"
+        },
+        "breakdown_cost": {
+          "en": "Avg. Monthly Breakdown Cost (EGP/Cart)",
+          "ar": "متوسط تكلفة الأعطال الشهرية (جنيه/عربة)"
+        }
+      },
+      "btn_text": {
+        "en": "Calculate Savings",
+        "ar": "احسب التوفير"
+      },
+      "result_labels": {
+        "reactive_cost": {
+          "en": "Current Annual Reactive Cost",
+          "ar": "التكلفة السنوية التفاعلية الحالية"
+        },
+        "ilios_cost": {
+          "en": "Estimated ilios Contract Cost",
+          "ar": "تكلفة عقد ilios المقدرة"
+        },
+        "annual_savings": {
+          "en": "Projected Annual Savings",
+          "ar": "التوفير السنوي المتوقع"
+        },
+        "roi_percent": {
+          "en": "Return on Investment (ROI)",
+          "ar": "عائد الاستثمار"
+        },
+        "battery_savings": {
+          "en": "Added Battery Lifespan Value",
+          "ar": "قيمة العمر الافتراضي الإضافي للبطارية"
+        }
+      },
+      "cta_hook": {
+        "en": "See how much you could save. Request a custom fleet quote.",
+        "ar": "اكتشف مقدار ما يمكنك توفيره. اطلب عرض سعر مخصص لأسطولك."
+      },
+      "title": {
+        "en": "Proactive Maintenance ROI",
+        "ar": "عائد الاستثمار للصيانة الاستباقية"
+      },
+      "fleet_size_label": {
+        "en": "Number of Carts",
+        "ar": "عدد العربات"
+      },
+      "breakdown_cost_label": {
+        "en": "Avg. Monthly Breakdown Cost (EGP/Cart)",
+        "ar": "متوسط تكلفة الأعطال الشهرية (جنيه/عربة)"
+      },
+      "calculate_btn": {
+        "en": "Calculate Savings",
+        "ar": "احسب التوفير"
+      }
+    }
+  },
+  "services": {
+    "section_title": {
+      "en": "Comprehensive Solutions",
+      "ar": "حلول شاملة"
+    },
+    "section_subtitle": {
+      "en": "Engineered services for individual owners and commercial fleets.",
+      "ar": "خدمات هندسية للملاك الأفراد والأساطيل التجارية."
+    },
+    "b2c": {
+      "group_title": {
+        "en": "For Individual Owners (B2C)",
+        "ar": "للملاك الأفراد (B2C)"
+      },
+      "cards": [
+        {
+          "icon": "wrench",
+          "title": {
+            "en": "Quick Service & Repairs",
+            "ar": "خدمة وإصلاحات سريعة"
+          },
+          "description": {
+            "en": "On-demand troubleshooting and rapid part replacement right at your location.",
+            "ar": "استكشاف الأعطال وإصلاحها عند الطلب واستبدال سريع لقطع الغيار في موقعك."
+          }
+        },
+        {
+          "icon": "battery",
+          "title": {
+            "en": "Battery Solutions",
+            "ar": "حلول البطاريات"
+          },
+          "description": {
+            "en": "Full spectrum battery care including deep cleaning, terminal protection, and lithium upgrades.",
+            "ar": "رعاية شاملة للبطاريات تشمل التنظيف العميق وحماية الأطراف وترقيات الليثيوم."
+          }
+        },
+        {
+          "icon": "sparkles",
+          "title": {
+            "en": "Technical Cleaning",
+            "ar": "تنظيف تقني"
+          },
+          "description": {
+            "en": "Professional detailing that protects sensitive electronics and prevents corrosion.",
+            "ar": "تنظيف احترافي يحمي الإلكترونيات الحساسة ويمنع التآكل."
+          }
+        },
+        {
+          "icon": "shield",
+          "title": {
+            "en": "Proactive Maintenance",
+            "ar": "صيانة استباقية"
+          },
+          "description": {
+            "en": "Scheduled checkups to catch issues before they turn into costly breakdowns.",
+            "ar": "فحوصات مجدولة لاكتشاف المشكلات قبل تحولها إلى أعطال مكلفة."
+          }
+        }
+      ]
+    },
+    "b2b": {
+      "group_title": {
+        "en": "For Commercial Fleets (B2B)",
+        "ar": "للأساطيل التجارية (B2B)"
+      },
+      "cards": [
+        {
+          "icon": "chart",
+          "title": {
+            "en": "Fleet Management Dashboard",
+            "ar": "لوحة تحكم إدارة الأسطول"
+          },
+          "description": {
+            "en": "Track maintenance history, operational costs, and fleet health in real-time.",
+            "ar": "تتبع سجل الصيانة والتكاليف التشغيلية وصحة الأسطول في الوقت الفعلي."
+          }
+        },
+        {
+          "icon": "document",
+          "title": {
+            "en": "Annual Contracts",
+            "ar": "عقود سنوية"
+          },
+          "description": {
+            "en": "Tailored maintenance agreements ensuring zero downtime for your business operations.",
+            "ar": "اتفاقيات صيانة مخصصة لضمان عدم توقف عملياتك التجارية."
+          }
+        },
+        {
+          "icon": "cpu",
+          "title": {
+            "en": "Digital Diagnostics",
+            "ar": "تشخيص رقمي"
+          },
+          "description": {
+            "en": "Advanced computer-based testing for precise issue identification and resolution.",
+            "ar": "اختبار حاسوبي متقدم لتحديد المشكلات وحلها بدقة."
+          }
+        },
+        {
+          "icon": "user",
+          "title": {
+            "en": "Dedicated Account Manager",
+            "ar": "مدير حساب مخصص"
+          },
+          "description": {
+            "en": "A single point of contact prioritizing your fleet's unique requirements.",
+            "ar": "نقطة اتصال واحدة تضع متطلبات أسطولك الفريدة في مقدمة الأولويات."
+          }
+        }
+      ]
+    },
+    "b2c_title": {
+      "en": "For Individual Owners (B2C)",
+      "ar": "للملاك الأفراد (B2C)"
+    },
+    "b2b_title": {
+      "en": "For Commercial Fleets (B2B)",
+      "ar": "للأساطيل التجارية (B2B)"
+    }
+  },
+  "trust": {
+    "section_title": {
+      "en": "Trusted by Leaders",
+      "ar": "موثوقون من قبل القادة"
+    },
+    "vigorey": {
+      "badge_alt": {
+        "en": "Vigorey Partner Badge",
+        "ar": "شارة شريك Vigorey"
+      },
+      "description": {
+        "en": "Official Service Partner for Vigorey Electric Vehicles in Egypt.",
+        "ar": "شريك الخدمة الرسمي للمركبات الكهربائية Vigorey في مصر."
+      }
+    },
+    "stats": [
+      {
+        "value": "650",
+        "suffix": "+",
+        "label": {
+          "en": "Carts Maintained",
+          "ar": "عربة تمت صيانتها"
+        }
+      },
+      {
+        "value": "98",
+        "suffix": "%",
+        "label": {
+          "en": "Client Satisfaction",
+          "ar": "رضا العملاء"
+        }
+      },
+      {
+        "value": "24",
+        "suffix": "/7",
+        "label": {
+          "en": "Support Availability",
+          "ar": "دعم متوفر"
+        }
+      }
+    ],
+    "linkedin": {
+      "title": {
+        "en": "Join our professional network",
+        "ar": "انضم إلى شبكتنا المهنية"
+      },
+      "placeholder_text": {
+        "en": "Follow ilios on LinkedIn for industry insights and updates.",
+        "ar": "تابع ilios على لينكد إن للحصول على رؤى وتحديثات الصناعة."
+      }
+    },
+    "stats_clients": {
+      "en": "Carts Maintained",
+      "ar": "عربة تمت صيانتها"
+    },
+    "stats_satisfaction": {
+      "en": "Client Satisfaction",
+      "ar": "رضا العملاء"
+    },
+    "stats_support": {
+      "en": "Support Availability",
+      "ar": "دعم متوفر"
+    }
+  },
+  "coverage": {
+    "section_title": {
+      "en": "Where We Operate",
+      "ar": "مناطق التغطية"
+    },
+    "section_subtitle": {
+      "en": "Strategic locations to serve you rapidly across Egypt.",
+      "ar": "مواقع استراتيجية لخدمتك بسرعة في جميع أنحاء مصر."
+    },
+    "locations": [
+      {
+        "name": {
+          "en": "Cairo",
+          "ar": "القاهرة"
+        },
+        "icon": "🏙️"
+      },
+      {
+        "name": {
+          "en": "Giza",
+          "ar": "الجيزة"
+        },
+        "icon": "🏛️"
+      },
+      {
+        "name": {
+          "en": "Ein Sokhna",
+          "ar": "العين السخنة"
+        },
+        "icon": "🏖️"
+      },
+      {
+        "name": {
+          "en": "North Coast",
+          "ar": "الساحل الشمالي"
+        },
+        "icon": "🌊"
+      }
+    ],
+    "nationwide_note": {
+      "en": "Available for major fleet contracts nationwide.",
+      "ar": "متوفر لعقود الأساطيل الكبرى في جميع أنحاء الجمهورية."
+    }
+  },
+  "partner": {
+    "section_title": {
+      "en": "Become a Partner",
+      "ar": "كن شريكاً"
+    },
+    "section_subtitle": {
+      "en": "Join the ilios ecosystem and elevate the golf cart industry together.",
+      "ar": "انضم إلى منظومة ilios لنرتقي بصناعة عربات الجولف معاً."
+    },
+    "form": {
+      "fields": [
+        {
+          "name": "name",
+          "type": "text",
+          "placeholder": {
+            "en": "Full Name",
+            "ar": "الاسم الكامل"
+          }
+        },
+        {
+          "name": "company",
+          "type": "text",
+          "placeholder": {
+            "en": "Company Name",
+            "ar": "اسم الشركة"
+          }
+        },
+        {
+          "name": "phone",
+          "type": "tel",
+          "placeholder": {
+            "en": "Phone Number",
+            "ar": "رقم الهاتف"
+          }
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "placeholder": {
+            "en": "Email Address",
+            "ar": "البريد الإلكتروني"
+          }
+        }
+      ],
+      "partner_types": [
+        {
+          "value": "manufacturer",
+          "label": {
+            "en": "Manufacturer",
+            "ar": "مصنع"
+          }
+        },
+        {
+          "value": "dealer",
+          "label": {
+            "en": "Dealer",
+            "ar": "موزع"
+          }
+        },
+        {
+          "value": "supplier",
+          "label": {
+            "en": "Supplier",
+            "ar": "مورد"
+          }
+        },
+        {
+          "value": "tech",
+          "label": {
+            "en": "Tech Partner",
+            "ar": "شريك تقني"
+          }
+        }
+      ],
+      "btn_text": {
+        "en": "Submit Application",
+        "ar": "إرسال الطلب"
+      },
+      "success_msg": {
+        "en": "Application received. Our team will contact you shortly.",
+        "ar": "تم استلام الطلب. سيتواصل معك فريقنا قريباً."
+      },
+      "error_msg": {
+        "en": "An error occurred. Please try again.",
+        "ar": "حدث خطأ. يرجى المحاولة مرة أخرى."
+      },
+      "name_label": {
+        "en": "Full Name",
+        "ar": "الاسم الكامل"
+      },
+      "company_label": {
+        "en": "Company Name",
+        "ar": "اسم الشركة"
+      },
+      "phone_label": {
+        "en": "Phone Number",
+        "ar": "رقم الهاتف"
+      },
+      "email_label": {
+        "en": "Email Address",
+        "ar": "البريد الإلكتروني"
+      },
+      "partner_type_label": {
+        "en": "Partner Type",
+        "ar": "نوع الشراكة"
+      }
+    }
+  },
+  "footer": {
+    "contact": {
+      "label": {
+        "en": "Contact Us",
+        "ar": "تواصل معنا"
+      },
+      "manager": "Eng. Abdelrahman Mostafa",
+      "phone": "01008602509",
+      "email": "ilios.ev.eg@gmail.com",
+      "whatsapp": "https://wa.me/201008602509"
+    },
+    "quick_links": [
+      {
+        "label": {
+          "en": "Smart Tools",
+          "ar": "أدوات ذكية"
+        },
+        "href": "#smart-tools"
+      },
+      {
+        "label": {
+          "en": "Services",
+          "ar": "خدماتنا"
+        },
+        "href": "#services"
+      },
+      {
+        "label": {
+          "en": "Partner Network",
+          "ar": "شبكة الشركاء"
+        },
+        "href": "#partner"
+      }
+    ],
+    "social": [
+      {
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/company/ilios-ev/",
+        "icon": "linkedin"
+      },
+      {
+        "platform": "Facebook",
+        "url": "https://www.facebook.com/share/1A3F81HHJe/",
+        "icon": "facebook"
+      },
+      {
+        "platform": "WhatsApp",
+        "url": "https://wa.me/201008602509",
+        "icon": "whatsapp"
+      }
+    ],
+    "copyright": {
+      "en": "© 2026 ilios. All rights reserved.",
+      "ar": "© 2026 ilios. جميع الحقوق محفوظة."
+    },
+    "contact_address": {
+      "en": "Headquarters: Cairo, Egypt",
+      "ar": "المقر الرئيسي: القاهرة، مصر"
+    },
+    "contact_email": {
+      "en": "Email",
+      "ar": "البريد الإلكتروني"
+    },
+    "contact_phone": {
+      "en": "Phone",
+      "ar": "رقم الهاتف"
+    },
+    "quick_links_title": {
+      "en": "Quick Links",
+      "ar": "روابط سريعة"
+    },
+    "connect_title": {
+      "en": "Connect",
+      "ar": "تواصل معنا"
+    }
+  },
+  "modals": {
+    "visit": {
+      "title": {
+        "en": "Book a 7-Axis Audit",
+        "ar": "احجز فحص شامل"
+      },
+      "fields": [
+        {
+          "name": "name",
+          "type": "text",
+          "placeholder": {
+            "en": "Your Name",
+            "ar": "اسمك"
+          }
+        },
+        {
+          "name": "phone",
+          "type": "tel",
+          "placeholder": {
+            "en": "Phone Number",
+            "ar": "رقم الهاتف"
+          }
+        },
+        {
+          "name": "cart_brand",
+          "type": "text",
+          "placeholder": {
+            "en": "Cart Brand (e.g. Club Car, EZGO)",
+            "ar": "ماركة العربة (مثل Club Car, EZGO)"
+          }
+        },
+        {
+          "name": "preferred_date",
+          "type": "date",
+          "placeholder": {
+            "en": "Preferred Date",
+            "ar": "التاريخ المفضل"
+          }
+        }
+      ],
+      "locations": [
+        {
+          "value": "cairo",
+          "label": {
+            "en": "Cairo",
+            "ar": "القاهرة"
+          }
+        },
+        {
+          "value": "giza",
+          "label": {
+            "en": "Giza",
+            "ar": "الجيزة"
+          }
+        },
+        {
+          "value": "sokhna",
+          "label": {
+            "en": "Ein Sokhna",
+            "ar": "العين السخنة"
+          }
+        },
+        {
+          "value": "north_coast",
+          "label": {
+            "en": "North Coast",
+            "ar": "الساحل الشمالي"
+          }
+        }
+      ],
+      "btn_text": {
+        "en": "Confirm Booking",
+        "ar": "تأكيد الحجز"
+      },
+      "success_msg": {
+        "en": "Booking confirmed. We will contact you to verify the time.",
+        "ar": "تم تأكيد الحجز. سنتواصل معك لتأكيد الموعد."
+      },
+      "error_msg": {
+        "en": "Failed to book. Please check your connection and try again.",
+        "ar": "فشل الحجز. يرجى التحقق من اتصالك والمحاولة مرة أخرى."
+      },
+      "form_name_label": {
+        "en": "Your Name",
+        "ar": "اسمك"
+      },
+      "form_phone_label": {
+        "en": "Phone Number",
+        "ar": "رقم الهاتف"
+      },
+      "form_cart_brand_label": {
+        "en": "Cart Brand (e.g. Club Car, EZGO)",
+        "ar": "ماركة العربة (مثل Club Car, EZGO)"
+      },
+      "form_date_label": {
+        "en": "Preferred Date",
+        "ar": "التاريخ المفضل"
+      },
+      "form_location_label": {
+        "en": "Location",
+        "ar": "الموقع"
+      },
+      "form_btn_text": {
+        "en": "Confirm Booking",
+        "ar": "تأكيد الحجز"
+      }
+    },
+    "b2b_quote": {
+      "title": {
+        "en": "Request Fleet Maintenance Quote",
+        "ar": "طلب عرض سعر صيانة الأسطول"
+      },
+      "fields": [
+        {
+          "name": "company",
+          "type": "text",
+          "placeholder": {
+            "en": "Company Name",
+            "ar": "اسم الشركة"
+          }
+        },
+        {
+          "name": "contact_person",
+          "type": "text",
+          "placeholder": {
+            "en": "Contact Person",
+            "ar": "الشخص المسؤول"
+          }
+        },
+        {
+          "name": "phone",
+          "type": "tel",
+          "placeholder": {
+            "en": "Phone Number",
+            "ar": "رقم الهاتف"
+          }
+        },
+        {
+          "name": "fleet_size",
+          "type": "number",
+          "placeholder": {
+            "en": "Fleet Size (Number of Carts)",
+            "ar": "حجم الأسطول (عدد العربات)"
+          }
+        },
+        {
+          "name": "message",
+          "type": "textarea",
+          "placeholder": {
+            "en": "Additional Details or Requirements",
+            "ar": "تفاصيل أو متطلبات إضافية"
+          }
+        }
+      ],
+      "btn_text": {
+        "en": "Request Quote",
+        "ar": "اطلب عرض سعر"
+      },
+      "success_msg": {
+        "en": "Request sent successfully. Our B2B team will be in touch.",
+        "ar": "تم إرسال الطلب بنجاح. سيتواصل معك فريق مبيعات الشركات."
+      },
+      "error_msg": {
+        "en": "Failed to send request. Please try again later.",
+        "ar": "فشل إرسال الطلب. يرجى المحاولة لاحقاً."
+      },
+      "form_company_label": {
+        "en": "Company Name",
+        "ar": "اسم الشركة"
+      },
+      "form_contact_label": {
+        "en": "Contact Person",
+        "ar": "الشخص المسؤول"
+      },
+      "form_phone_label": {
+        "en": "Phone Number",
+        "ar": "رقم الهاتف"
+      },
+      "form_fleet_size_label": {
+        "en": "Fleet Size (Number of Carts)",
+        "ar": "حجم الأسطول (عدد العربات)"
+      },
+      "form_message_label": {
+        "en": "Additional Details or Requirements",
+        "ar": "تفاصيل أو متطلبات إضافية"
+      },
+      "form_btn_text": {
+        "en": "Request Quote",
+        "ar": "اطلب عرض سعر"
+      }
+    }
+  }
+}

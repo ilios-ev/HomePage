@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.title"></title>
+
+  <!-- Google Fonts: Inter and Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="css/output.css">
+
+  <!-- Scripts -->
+  <script src="js/tools.js" defer></script>
+  <script type="module" src="js/main.js" defer></script>
+</head>
+
+<body class="bg-slate-900 text-white font-sans antialiased transition-colors duration-300">
+
+  <!-- 1. Header -->
+  <header id="header" class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center">
+        <span class="text-2xl font-bold text-white tracking-tight" data-i18n="nav.logo_text"></span>
+      </div>
+
+      <nav class="hidden md:flex space-x-6 rtl:space-x-reverse items-center">
+        <a href="#smart-tools" class="nav-link text-slate-300 hover:text-white transition-colors"
+          data-i18n="nav.links.smart_tools"></a>
+        <a href="#services" class="nav-link text-slate-300 hover:text-white transition-colors"
+          data-i18n="nav.links.services"></a>
+        <a href="#trust" class="nav-link text-slate-300 hover:text-white transition-colors"
+          data-i18n="nav.links.trust"></a>
+        <a href="#coverage" class="nav-link text-slate-300 hover:text-white transition-colors"
+          data-i18n="nav.links.coverage"></a>
+        <a href="#partner" class="nav-link text-slate-300 hover:text-white transition-colors"
+          data-i18n="nav.links.partner"></a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+        <button id="lang-toggle"
+          class="text-sm font-medium text-slate-300 hover:text-white transition-colors">عربي</button>
+        <button id="btn-login"
+          class="bg-transparent border border-gold text-gold hover:bg-gold hover:text-slate-900 px-4 py-2 rounded-md font-medium transition-colors"
+          data-i18n="nav.btn_login_text"></button>
+        <button id="btn-cta-header"
+          class="bg-forest hover:bg-forest-light text-white px-5 py-2 rounded-md font-medium transition-colors"
+          data-i18n="nav.btn_cta_text"></button>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- 2. Hero Section -->
+  <section id="hero"
+    class="min-h-screen hero-gradient relative flex items-center justify-center overflow-hidden fade-in-up">
+    <div class="container mx-auto px-4 z-10 text-center">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white" data-i18n="hero.headline"></h1>
+      <p class="text-xl md:text-2xl text-gold mb-10 max-w-3xl mx-auto" data-i18n="hero.subheadline"></p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button id="btn-book-inspection"
+          class="bg-forest hover:bg-forest-light text-white text-lg px-8 py-4 rounded-md font-semibold transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto"
+          data-i18n="hero.cta_primary_text"></button>
+        <button id="btn-explore"
+          class="bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-slate-900 text-lg px-8 py-4 rounded-md font-semibold transition-colors w-full sm:w-auto"
+          data-i18n="hero.cta_secondary_text"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Smart Tools Section -->
+  <section id="smart-tools" class="py-20 bg-slate-900 fade-in-up">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4" data-i18n="smart_tools.section_title"></h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto" data-i18n="smart_tools.section_subtitle"></p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- SOH Card -->
+        <div id="soh-card" class="glass-card p-8 rounded-xl border border-slate-700/50 relative overflow-hidden">
+          <h3 class="text-2xl font-semibold text-white mb-6" data-i18n="smart_tools.soh.title"></h3>
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1"
+                data-i18n="smart_tools.soh.battery_type_label"></label>
+              <select id="soh-battery-type" class="ilios-input w-full">
+                <option value="lead-acid" data-i18n="smart_tools.soh.battery_lead_acid"></option>
+                <option value="lithium" data-i18n="smart_tools.soh.battery_lithium"></option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1"
+                data-i18n="smart_tools.soh.voltage_label"></label>
+              <input type="number" id="soh-voltage" class="ilios-input w-full">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1"
+                data-i18n="smart_tools.soh.voltage_after_label"></label>
+              <input type="number" id="soh-voltage-after" class="ilios-input w-full">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1"
+                data-i18n="smart_tools.soh.distance_label"></label>
+              <input type="number" id="soh-distance" class="ilios-input w-full">
+            </div>
+            <button id="btn-calc-soh"
+              class="w-full bg-forest hover:bg-forest-light text-white font-medium py-3 rounded-md transition-colors mt-4"
+              data-i18n="smart_tools.soh.calculate_btn"></button>
+          </div>
+          <div id="soh-result" class="mt-6 hidden"></div>
+        </div>
+
+        <!-- ROI Card -->
+        <div id="roi-card" class="glass-card p-8 rounded-xl border border-slate-700/50 relative overflow-hidden">
+          <h3 class="text-2xl font-semibold text-white mb-6" data-i18n="smart_tools.roi.title"></h3>
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-sm font-medium text-slate-300" data-i18n="smart_tools.roi.fleet_size_label"></label>
+                <span id="roi-fleet-label" class="text-gold font-bold">10</span>
+              </div>
+              <input type="range" id="roi-fleet-size" min="5" max="500" step="5" value="10" class="ilios-slider w-full">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1"
+                data-i18n="smart_tools.roi.breakdown_cost_label"></label>
+              <input type="number" id="roi-breakdown-cost" class="ilios-input w-full">
+            </div>
+            <button id="btn-calc-roi"
+              class="w-full bg-forest hover:bg-forest-light text-white font-medium py-3 rounded-md transition-colors mt-4"
+              data-i18n="smart_tools.roi.calculate_btn"></button>
+          </div>
+          <div id="roi-result" class="mt-6 hidden"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Services Section -->
+  <section id="services" class="py-20 bg-forest-light fade-in-up">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4" data-i18n="services.section_title"></h2>
+      </div>
+
+      <div class="space-y-16">
+        <div>
+          <h3 class="text-2xl font-semibold text-gold mb-8 text-center" data-i18n="services.b2c_title"></h3>
+          <div id="b2c-services" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Built by main.js -->
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold text-gold mb-8 text-center" data-i18n="services.b2b_title"></h3>
+          <div id="b2b-services" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Built by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Trust Section -->
+  <section id="trust" class="py-20 bg-slate-900 border-t border-b border-slate-800 fade-in-up">
+    <div class="container mx-auto px-4 text-center">
+      <div class="mb-12 flex justify-center">
+        <!-- Vigorey badge img -->
+        <img id="vigorey-badge" src="assets/vigorey-badge.png" alt="Vigorey"
+          class="h-24 object-contain filter drop-shadow-lg pulse-glow" />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto">
+        <div class="p-6">
+          <div class="text-4xl md:text-5xl font-bold text-gold mb-2">
+            <span class="stat-counter" data-target="500" data-suffix="+">0</span>
+          </div>
+          <span class="text-slate-300 font-medium uppercase tracking-wider text-sm"
+            data-i18n="trust.stats.clients"></span>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl md:text-5xl font-bold text-lime mb-2">
+            <span class="stat-counter" data-target="98" data-suffix="%">0</span>
+          </div>
+          <span class="text-slate-300 font-medium uppercase tracking-wider text-sm"
+            data-i18n="trust.stats.satisfaction"></span>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl md:text-5xl font-bold text-forest-light mb-2">
+            <span class="stat-counter" data-target="24" data-suffix="/7">0</span>
+          </div>
+          <span class="text-slate-300 font-medium uppercase tracking-wider text-sm"
+            data-i18n="trust.stats.support"></span>
+        </div>
+      </div>
+
+      <div class="max-w-3xl mx-auto glass-card p-6 rounded-xl border border-slate-800">
+        <div id="linkedin-feed" class="text-slate-400 py-10" data-i18n="trust.linkedin.placeholder_text"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Coverage Section -->
+  <section id="coverage" class="py-20 bg-forest relative overflow-hidden fade-in-up">
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4" data-i18n="coverage.section_title"></h2>
+      </div>
+
+      <div id="coverage-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <!-- Built by main.js -->
+      </div>
+
+      <p id="nationwide-note" class="text-center text-lime-light font-medium text-lg max-w-2xl mx-auto"
+        data-i18n="coverage.nationwide_note"></p>
+    </div>
+  </section>
+
+  <!-- 7. Partner Section -->
+  <section id="partner" class="py-20 bg-slate-900 fade-in-up">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="partner.section_title"></h2>
+        <p class="text-slate-400 text-lg" data-i18n="partner.section_subtitle"></p>
+      </div>
+
+      <div class="max-w-2xl mx-auto glass-card p-8 rounded-xl border border-slate-700/50">
+        <form id="partner-form" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1" data-i18n="partner.form.name_label"></label>
+              <input type="text" name="name" class="ilios-input w-full" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1"
+                data-i18n="partner.form.company_label"></label>
+              <input type="text" name="company" class="ilios-input w-full" required>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1" data-i18n="partner.form.phone_label"></label>
+              <input type="tel" name="phone" class="ilios-input w-full" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1" data-i18n="partner.form.email_label"></label>
+              <input type="email" name="email" class="ilios-input w-full" required>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-1"
+              data-i18n="partner.form.partner_type_label"></label>
+            <select name="partner_type" class="ilios-input w-full" required>
+              <!-- Populated by JS -->
+            </select>
+          </div>
+          <button type="submit"
+            class="w-full bg-gold text-slate-900 hover:bg-gold-dim font-bold text-lg py-4 rounded-md transition-colors"
+            data-i18n="partner.form.btn_text"></button>
+        </form>
+        <div id="partner-response" class="mt-4 hidden text-center font-medium"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Footer -->
+  <footer id="footer" class="bg-slate-900 border-t border-slate-800 pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div>
+          <span class="text-2xl font-bold text-white mb-6 block tracking-tight" data-i18n="nav.logo_text"></span>
+          <div class="space-y-3 text-slate-400">
+            <div class="flex items-start">
+              <span data-i18n="footer.contact.address"></span>
+            </div>
+            <div class="flex items-center">
+              <span data-i18n="footer.contact.email"></span>
+            </div>
+            <div class="flex items-center">
+              <span dir="ltr" data-i18n="footer.contact.phone"></span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-6" data-i18n="footer.quick_links.title"></h4>
+          <ul class="space-y-3">
+            <li><a href="#smart-tools" class="text-slate-400 hover:text-white transition-colors"
+                data-i18n="nav.links.smart_tools"></a></li>
+            <li><a href="#services" class="text-slate-400 hover:text-white transition-colors"
+                data-i18n="nav.links.services"></a></li>
+            <li><a href="#coverage" class="text-slate-400 hover:text-white transition-colors"
+                data-i18n="nav.links.coverage"></a></li>
+            <li><a href="#partner" class="text-slate-400 hover:text-white transition-colors"
+                data-i18n="nav.links.partner"></a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-6" data-i18n="footer.connect_title"></h4>
+          <div class="flex space-x-4 rtl:space-x-reverse mb-8">
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-gold hover:text-slate-900 transition-colors"
+              aria-label="LinkedIn"></a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-gold hover:text-slate-900 transition-colors"
+              aria-label="Facebook"></a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-gold hover:text-slate-900 transition-colors"
+              aria-label="WhatsApp"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-800 pt-8 mt-8 text-center text-slate-500 text-sm">
+        <p data-i18n="footer.copyright"></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+  <div id="visit-modal"
+    class="modal-overlay fixed inset-0 z-[100] bg-slate-900/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div
+      class="modal-content glass-card bg-slate-900 border border-slate-700 w-full max-w-lg rounded-2xl p-6 md:p-8 relative">
+      <button
+        class="modal-close absolute top-4 right-4 rtl:right-auto rtl:left-4 text-slate-400 hover:text-white transition-colors">X</button>
+      <h3 class="text-2xl font-bold text-white mb-6" data-i18n="modals.visit.title"></h3>
+      <form id="visit-form" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1" data-i18n="modals.visit.form.name_label"></label>
+          <input type="text" name="name" class="ilios-input w-full" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1"
+            data-i18n="modals.visit.form.phone_label"></label>
+          <input type="tel" name="phone" class="ilios-input w-full" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1"
+            data-i18n="modals.visit.form.location_label"></label>
+          <select name="location" class="ilios-input w-full" required>
+            <option value="Cairo">Cairo</option>
+            <option value="Giza">Giza</option>
+            <option value="Sokhna">Sokhna</option>
+            <option value="NorthCoast">North Coast</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1"
+            data-i18n="modals.visit.form.cart_brand_label"></label>
+          <input type="text" name="cart_brand" class="ilios-input w-full">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1" data-i18n="modals.visit.form.date_label"></label>
+          <input type="date" name="preferred_date" class="ilios-input w-full" required>
+        </div>
+        <button type="submit"
+          class="w-full bg-forest hover:bg-forest-light text-white font-bold text-lg py-3 rounded-md transition-colors mt-6"
+          data-i18n="modals.visit.form.btn_text"></button>
+      </form>
+      <div id="visit-response" class="mt-4 hidden text-center font-medium"></div>
+    </div>
+  </div>
+
+  <div id="b2b-modal"
+    class="modal-overlay fixed inset-0 z-[100] bg-slate-900/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div
+      class="modal-content glass-card bg-slate-900 border border-slate-700 w-full max-w-lg rounded-2xl p-6 md:p-8 relative">
+      <button
+        class="modal-close absolute top-4 right-4 rtl:right-auto rtl:left-4 text-slate-400 hover:text-white transition-colors">X</button>
+      <h3 class="text-2xl font-bold text-white mb-6" data-i18n="modals.b2b_quote.title"></h3>
+      <form id="b2b-form" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1"
+            data-i18n="modals.b2b_quote.form.company_label"></label>
+          <input type="text" name="company" class="ilios-input w-full" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1"
+            data-i18n="modals.b2b_quote.form.contact_label"></label>
+          <input type="text" name="contact_person" class="ilios-input w-full" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1"
+            data-i18n="modals.b2b_quote.form.phone_label"></label>
+          <input type="tel" name="phone" class="ilios-input w-full" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1"
+            data-i18n="modals.b2b_quote.form.fleet_size_label"></label>
+          <input type="number" name="fleet_size" class="ilios-input w-full" required min="1">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1"
+            data-i18n="modals.b2b_quote.form.message_label"></label>
+          <textarea name="message" class="ilios-input w-full" rows="3"></textarea>
+        </div>
+        <button type="submit"
+          class="w-full bg-gold text-slate-900 hover:bg-gold-dim font-bold text-lg py-3 rounded-md transition-colors mt-6"
+          data-i18n="modals.b2b_quote.form.btn_text"></button>
+      </form>
+      <div id="b2b-response" class="mt-4 hidden text-center font-medium"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>
