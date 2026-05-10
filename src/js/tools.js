@@ -3,86 +3,102 @@
  */
 
 /**
- * Calculates Battery State of Health (SOH) using the Ilios Engineering Model.
- * @param {Object} inputs - All user inputs for the diagnostic
- * @returns {Object} result - Diagnostic metrics and status
+ * Calculates Battery State of Health (SOH) using the advanced engineering logic.
  */
-function calcSOH(inputs) {
-  const {
-    batteryType, nominalVoltage, capacity, ageMonths,
-    socBefore, voltageBefore, socAfter, voltageAfter,
-    voltageUnderLoad, distance, expectedRangeNew
-  } = inputs;
-
-  // STEP 1: Validate Inputs
-  if (socBefore <= socAfter || distance <= 0) {
-    return { error: true, message: "Invalid SOC drop or distance" };
+function calcSOH(
+  batteryType,
+  nominalVoltage,
+  capacityAh,
+  batteryAgeMonths,
+  socBefore,
+  voltageBefore,
+  socAfter,
+  voltageAfter,
+  voltageUnderLoad,
+  distanceDriven,
+  expectedRange
+) {
+  // Step 1: Validate Inputs
+  if (
+    typeof nominalVoltage !== 'number' || isNaN(nominalVoltage) || nominalVoltage <= 0 ||
+    typeof capacityAh !== 'number' || isNaN(capacityAh) || capacityAh <= 0 ||
+    typeof batteryAgeMonths !== 'number' || isNaN(batteryAgeMonths) || batteryAgeMonths < 0 ||
+    typeof socBefore !== 'number' || isNaN(socBefore) || socBefore < 0 || socBefore > 100 ||
+    typeof socAfter !== 'number' || isNaN(socAfter) || socAfter < 0 || socAfter > 100 ||
+    typeof voltageBefore !== 'number' || isNaN(voltageBefore) || voltageBefore <= 0 ||
+    typeof voltageUnderLoad !== 'number' || isNaN(voltageUnderLoad) || voltageUnderLoad <= 0 ||
+    typeof distanceDriven !== 'number' || isNaN(distanceDriven) || distanceDriven <= 0 ||
+    (batteryType !== "lead_acid" && batteryType !== "lithium")
+  ) {
+    return { error: true, status: "Invalid Input", statusKey: "invalid", color: "#6B7280" };
   }
 
-  const isLowAccuracy = (socBefore - socAfter) < 10;
-
-  // STEP 2: SOC Drop
   const socDrop = socBefore - socAfter;
+  
+  if (socDrop <= 0) {
+    return { error: true, status: "Invalid SOC Drop", statusKey: "invalid", color: "#6B7280" };
+  }
+  
+  let confidence = "High";
+  if (socDrop < 10) {
+    confidence = "Low";
+  }
 
-  // STEP 3: Determine Nominal Range
-  let nominalRange = expectedRangeNew;
-  if (!nominalRange || isNaN(nominalRange)) {
-    const energyKWh = (nominalVoltage * capacity) / 1000;
-    const efficiencyFactor = batteryType === 'lithium' ? 13 : 9;
+  // Step 3: Determine Nominal Range
+  let nominalRange = expectedRange;
+  if (!nominalRange || isNaN(nominalRange) || nominalRange <= 0) {
+    const energyKWh = (nominalVoltage * capacityAh) / 1000;
+    const efficiencyFactor = batteryType === "lead_acid" ? 9 : 13;
     nominalRange = energyKWh * efficiencyFactor;
   }
 
-  // STEP 4: Expected Distance Based on SOC Used
+  // Step 4: Expected Distance Based on SOC Used
   const expectedDistance = (socDrop / 100) * nominalRange;
 
-  // STEP 5: Range Health (%)
-  let rangeHealth = (distance / expectedDistance) * 100;
-  rangeHealth = Math.max(0, Math.min(120, rangeHealth));
+  // Step 5: Range Health (%)
+  let rangeHealth = (distanceDriven / expectedDistance) * 100;
+  rangeHealth = Math.min(120, Math.max(0, rangeHealth)); // Clamp between 0 and 120
 
-  // STEP 6: Voltage Stress Score
+  // Step 6: Voltage Stress Score
   const voltageDrop = voltageBefore - voltageUnderLoad;
   const normalizedDrop = voltageDrop / nominalVoltage;
-  let stressScore = 100 - (150 * normalizedDrop);
-  stressScore = Math.max(0, Math.min(100, stressScore));
+  const stressCoefficient = batteryType === "lead_acid" ? 150 : 250;
+  let stressScore = 100 - (stressCoefficient * normalizedDrop);
+  stressScore = Math.min(100, Math.max(0, stressScore)); // Clamp between 0 and 100
 
-  // STEP 7: Age Factor
-  const expectedLife = batteryType === 'lithium' ? 72 : 24;
-  const ageFactor = (ageMonths / expectedLife) * 100;
+  // Step 7: Age Factor
+  const expectedLife = batteryType === "lead_acid" ? 24 : 72;
+  const ageFactor = (batteryAgeMonths / expectedLife) * 100;
 
-  // STEP 8: State of Health (SOH %)
-  // Weighted: 50% Range, 30% Stress, -20% Age penalty
-  let soh = (0.5 * rangeHealth) + (0.3 * stressScore) - (0.2 * ageFactor);
-  soh = Math.max(0, Math.min(100, soh));
-
-  // STEP 9: Consumption per KM (% per km)
-  const consumptionPerKm = socDrop / distance;
-
-  // STEP 10: Status Classification
-  let statusKey = "replace";
-  let color = "#E63946"; // Red
-
-  if (soh >= 85) {
-    statusKey = "excellent";
-    color = "#74C69D"; // Forest/Lime
-  } else if (soh >= 70) {
-    statusKey = "good";
-    color = "#95D5B2"; // Soft Green
-  } else if (soh >= 50) {
-    statusKey = "needs_attention";
-    color = "#FFD700"; // Gold
-  } else if (soh >= 30) {
-    statusKey = "weak";
-    color = "#F4A261"; // Orange
+  // Step 8: State of Health (SOH %)
+  let soh = 0;
+  if (batteryType === "lead_acid") {
+    soh = (0.50 * rangeHealth) + (0.30 * stressScore) - (0.20 * ageFactor);
+  } else {
+    soh = (0.75 * rangeHealth) + (0.15 * stressScore) - (0.10 * ageFactor);
   }
+  soh = parseFloat(Math.min(100, Math.max(0, soh)).toFixed(1));
+
+  // Step 9: Consumption per KM
+  const consumptionPerKm = parseFloat((socDrop / distanceDriven).toFixed(2));
+
+  // Step 10: Status Classification
+  let statusKey, color;
+  if (soh >= 85) { statusKey = "excellent"; color = "#74C69D"; }
+  else if (soh >= 70) { statusKey = "good"; color = "#95D5B2"; }
+  else if (soh >= 50) { statusKey = "needs_attention"; color = "#FFD700"; }
+  else if (soh >= 30) { statusKey = "weak"; color = "#F4A261"; }
+  else { statusKey = "replace"; color = "#E63946"; }
 
   return {
-    soh: parseFloat(soh.toFixed(1)),
+    error: false,
+    soh,
     rangeHealth: parseFloat(rangeHealth.toFixed(1)),
     stressScore: parseFloat(stressScore.toFixed(1)),
-    consumption: parseFloat(consumptionPerKm.toFixed(2)),
+    consumptionPerKm,
     statusKey,
     color,
-    isLowAccuracy
+    confidence
   };
 }
 

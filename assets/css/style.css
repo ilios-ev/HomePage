@@ -1327,6 +1327,10 @@ body.font-arabic {
   border-color: rgb(255 255 255 / 0.05);
 }
 
+.border-yellow-500\/20 {
+  border-color: rgb(234 179 8 / 0.2);
+}
+
 .bg-\[\#0A66C2\] {
   --tw-bg-opacity: 1;
   background-color: rgb(10 102 194 / var(--tw-bg-opacity, 1));
@@ -1427,6 +1431,10 @@ body.font-arabic {
 
 .bg-white\/5 {
   background-color: rgb(255 255 255 / 0.05);
+}
+
+.bg-yellow-500\/10 {
+  background-color: rgb(234 179 8 / 0.1);
 }
 
 .bg-gradient-to-br {
@@ -1758,6 +1766,11 @@ body.font-arabic {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.text-yellow-400 {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity, 1));
+}
+
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2034,8 +2047,16 @@ body.font-arabic {
 }
 
 @media (min-width: 640px) {
+  .sm\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
   .sm\:w-auto {
     width: auto;
+  }
+
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sm\:flex-row {

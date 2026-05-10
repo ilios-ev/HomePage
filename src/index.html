@@ -93,33 +93,70 @@
         <!-- SOH Card -->
         <div id="soh-card" class="glass-card p-8 rounded-xl border border-slate-700/50 relative overflow-hidden">
           <h3 class="text-2xl font-semibold text-white mb-6" data-i18n="smart_tools.soh.title"></h3>
-          <div class="space-y-4">
-            <div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="sm:col-span-2">
               <label class="block text-sm font-medium text-slate-300 mb-1"
-                data-i18n="smart_tools.soh.battery_type_label"></label>
+                data-i18n="smart_tools.soh.input_labels.battery_type"></label>
               <select id="soh-battery-type" class="ilios-input w-full">
-                <option value="lead-acid" data-i18n="smart_tools.soh.battery_lead_acid"></option>
+                <option value="lead_acid" data-i18n="smart_tools.soh.battery_lead_acid"></option>
                 <option value="lithium" data-i18n="smart_tools.soh.battery_lithium"></option>
               </select>
             </div>
             <div>
               <label class="block text-sm font-medium text-slate-300 mb-1"
-                data-i18n="smart_tools.soh.voltage_label"></label>
-              <input type="number" id="soh-voltage" class="ilios-input w-full">
+                data-i18n="smart_tools.soh.input_labels.nominal_voltage"></label>
+              <input type="number" id="soh-nominal-voltage" class="ilios-input w-full" value="48">
             </div>
             <div>
               <label class="block text-sm font-medium text-slate-300 mb-1"
-                data-i18n="smart_tools.soh.voltage_after_label"></label>
-              <input type="number" id="soh-voltage-after" class="ilios-input w-full">
+                data-i18n="smart_tools.soh.input_labels.capacity"></label>
+              <input type="number" id="soh-capacity" class="ilios-input w-full" value="105">
             </div>
             <div>
               <label class="block text-sm font-medium text-slate-300 mb-1"
-                data-i18n="smart_tools.soh.distance_label"></label>
-              <input type="number" id="soh-distance" class="ilios-input w-full">
+                data-i18n="smart_tools.soh.input_labels.age"></label>
+              <input type="number" id="soh-age" class="ilios-input w-full" placeholder="e.g., 12">
             </div>
-            <button id="btn-calc-soh"
-              class="w-full bg-forest hover:bg-forest-light text-white font-medium py-3 rounded-md transition-colors mt-4"
-              data-i18n="smart_tools.soh.calculate_btn"></button>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1"
+                data-i18n="smart_tools.soh.input_labels.distance"></label>
+              <input type="number" id="soh-distance" class="ilios-input w-full" placeholder="e.g., 10">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1"
+                data-i18n="smart_tools.soh.input_labels.soc_start"></label>
+              <input type="number" id="soh-soc-start" class="ilios-input w-full" value="100">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1"
+                data-i18n="smart_tools.soh.input_labels.soc_end"></label>
+              <input type="number" id="soh-soc-end" class="ilios-input w-full" placeholder="e.g., 80">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1"
+                data-i18n="smart_tools.soh.input_labels.v_start"></label>
+              <input type="number" id="soh-v-start" class="ilios-input w-full" step="0.1" placeholder="e.g., 51.2">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1"
+                data-i18n="smart_tools.soh.input_labels.v_end"></label>
+              <input type="number" id="soh-v-end" class="ilios-input w-full" step="0.1" placeholder="e.g., 49.5">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1"
+                data-i18n="smart_tools.soh.input_labels.v_load"></label>
+              <input type="number" id="soh-v-load" class="ilios-input w-full" step="0.1" placeholder="e.g., 46.5">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-1"
+                data-i18n="smart_tools.soh.input_labels.expected_range"></label>
+              <input type="number" id="soh-expected-range" class="ilios-input w-full" placeholder="Optional">
+            </div>
+            <div class="sm:col-span-2">
+              <button id="btn-calc-soh"
+                class="w-full bg-forest hover:bg-forest-light text-white font-medium py-3 rounded-md transition-colors mt-2"
+                data-i18n="smart_tools.soh.calculate_btn"></button>
+            </div>
           </div>
           <div id="soh-result" class="mt-6 hidden"></div>
         </div>

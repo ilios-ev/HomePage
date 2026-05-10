@@ -165,36 +165,28 @@ function populateDynamic() {
 function wireCalculators() {
   // SOH
   document.getElementById("btn-calc-soh")?.addEventListener("click", () => {
-    const inputs = {
-      batteryType: document.getElementById("soh-battery-type").value,
-      nominalVoltage: parseFloat(document.getElementById("soh-nominal-v").value),
-      capacity: parseFloat(document.getElementById("soh-capacity").value),
-      ageMonths: parseFloat(document.getElementById("soh-age").value),
-      socBefore: parseFloat(document.getElementById("soh-soc-start").value),
-      voltageBefore: parseFloat(document.getElementById("soh-v-start").value),
-      socAfter: parseFloat(document.getElementById("soh-soc-end").value),
-      voltageAfter: parseFloat(document.getElementById("soh-v-end").value),
-      voltageUnderLoad: parseFloat(document.getElementById("soh-v-load").value),
-      distance: parseFloat(document.getElementById("soh-distance").value),
-      expectedRangeNew: parseFloat(document.getElementById("soh-expected-range").value)
-    };
+    const bt = document.getElementById("soh-battery-type").value;
+    const nv = parseFloat(document.getElementById("soh-nominal-voltage").value);
+    const cap = parseFloat(document.getElementById("soh-capacity").value);
+    const age = parseFloat(document.getElementById("soh-age").value);
+    const socS = parseFloat(document.getElementById("soh-soc-start").value);
+    const vs = parseFloat(document.getElementById("soh-v-start").value);
+    const socE = parseFloat(document.getElementById("soh-soc-end").value);
+    const ve = parseFloat(document.getElementById("soh-v-end").value);
+    const vl = parseFloat(document.getElementById("soh-v-load").value);
+    const dist = parseFloat(document.getElementById("soh-distance").value);
+    const exp = parseFloat(document.getElementById("soh-expected-range").value);
 
-    const result = calcSOH(inputs);
-    const el = document.getElementById("soh-result");
-    const warnEl = document.getElementById("soh-warning");
+    const result = calcSOH(bt, nv, cap, age, socS, vs, socE, ve, vl, dist, exp);
     
+    const el = document.getElementById("soh-result");
     el.classList.remove("hidden");
     
     if (result.error) {
       el.innerHTML = `<div class="text-red-400 font-medium p-4 bg-red-400/10 rounded-lg">
-        ${currentLang === "ar" ? "يرجى إدخال قيم صحيحة" : result.message}</div>`;
-      warnEl.classList.add("hidden");
+        ${currentLang === "ar" ? "يرجى إدخال قيم صحيحة وممكنة" : result.status}</div>`;
       return;
     }
-
-    // Toggle Warning
-    if (result.isLowAccuracy) warnEl.classList.remove("hidden");
-    else warnEl.classList.add("hidden");
 
     const statusLabel = appData?.smart_tools?.soh?.statuses?.[result.statusKey]?.[currentLang] || result.statusKey;
     
@@ -236,8 +228,13 @@ function wireCalculators() {
 
         <div class="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/5">
           <span class="text-slate-400 text-sm">Consumption per KM</span>
-          <span class="text-gold font-bold">${result.consumption}%/km</span>
+          <span class="text-gold font-bold">${result.consumptionPerKm}%/km</span>
         </div>
+
+        ${result.confidence === "Low" ? `
+        <div class="mt-4 p-3 bg-yellow-500/10 border border-yellow-500/20 rounded-xl text-yellow-400 text-xs text-center">
+          ⚠️ ${currentLang === "ar" ? "دقة منخفضة: قد مسافة أطول (انخفاض الشحن > 10٪) لقراءة موثوقة." : "Low accuracy: Drive further for a larger SOC drop (>10%) to get a reliable reading."}
+        </div>` : ''}
 
         ${(result.statusKey === "weak" || result.statusKey === "replace") ? `
         <div class="mt-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-xs text-center">
